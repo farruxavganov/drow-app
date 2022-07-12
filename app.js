@@ -17,7 +17,7 @@ canvas.addEventListener("mousedown", (e)=> {
 
 })
 
-canvas.addEventListener("pointerdown", (e)=> {
+canvas.addEventListener("touchstart", (e)=> {
 	isTrue = true;
 	x = e.offsetX;
 	y = e.offsetY;
@@ -36,7 +36,7 @@ canvas.addEventListener("mousemove", (e)=> {
 	}
 })
 
-canvas.addEventListener("pointermove", (e)=> {
+canvas.addEventListener("touchmove", (e)=> {
 	if(isTrue){
 		let x1 = e.offsetX;
 		let y1 = e.offsetY;
@@ -54,7 +54,7 @@ canvas.addEventListener("mouseup",()=> {
 	y = undefined;
 })
 
-canvas.addEventListener("pointerup",()=> {
+canvas.addEventListener("touchend",()=> {
 	isTrue = false;
 
 	x = undefined;
