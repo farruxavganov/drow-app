@@ -17,6 +17,14 @@ canvas.addEventListener("mousedown", (e)=> {
 
 })
 
+canvas.addEventListener("pointerdown", (e)=> {
+	isTrue = true;
+	x = e.offsetX;
+	y = e.offsetY;
+	drowCircle(x,y);
+
+})
+
 canvas.addEventListener("mousemove", (e)=> {
 	if(isTrue){
 		let x1 = e.offsetX;
@@ -28,7 +36,25 @@ canvas.addEventListener("mousemove", (e)=> {
 	}
 })
 
+canvas.addEventListener("pointermove", (e)=> {
+	if(isTrue){
+		let x1 = e.offsetX;
+		let y1 = e.offsetY;
+		drowCircle(x1,y1);
+		drowLine(x,y,x1,y1);
+		x = x1;
+		y = y1;
+	}
+})
+
 canvas.addEventListener("mouseup",()=> {
+	isTrue = false;
+
+	x = undefined;
+	y = undefined;
+})
+
+canvas.addEventListener("pointerup",()=> {
 	isTrue = false;
 
 	x = undefined;
