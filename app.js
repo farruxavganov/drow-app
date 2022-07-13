@@ -9,7 +9,17 @@ let isTrue = false;
 let x = undefined;
 let y = undefined;
 
-canvas.addEventListener("mousedown", (e)=> {
+// canvas.addEventListener("mousedown", (e)=> {
+// 	console.log(e)
+// 	isTrue = true;
+// 	x = e.offsetX;
+// 	y = e.offsetY;
+// 	drowCircle(x,y);
+
+// })
+
+canvas.addEventListener("pointerdown", (e)=> {
+	
 	isTrue = true;
 	x = e.offsetX;
 	y = e.offsetY;
@@ -17,15 +27,21 @@ canvas.addEventListener("mousedown", (e)=> {
 
 })
 
-canvas.onpointerdown = (e)=> {
-	isTrue = true;
-	x = e.offsetX;
-	y = e.offsetY;
-	drowCircle(x,y);
+// canvas.addEventListener("mousemove", (e)=> {
 
-}
+// 	if(isTrue){
+// 		let x1 = e.offsetX;
+// 		let y1 = e.offsetY;
+// 		drowCircle(x1,y1);
+// 		drowLine(x,y,x1,y1);
+// 		x = x1;
+// 		y = y1;
+// 	}
+// })
 
-canvas.addEventListener("mousemove", (e)=> {
+const p = document.querySelector(".p");
+canvas.addEventListener("pointermove", (e)=> {
+	p.innerHTML = e.offsetX
 	if(isTrue){
 		let x1 = e.offsetX;
 		let y1 = e.offsetY;
@@ -36,30 +52,19 @@ canvas.addEventListener("mousemove", (e)=> {
 	}
 })
 
-canvas.onpointermove = (e) => {
-	if(isTrue){
-		let x1 = e.offsetX;
-		let y1 = e.offsetY;
-		drowCircle(x1,y1);
-		drowLine(x,y,x1,y1);
-		x = x1;
-		y = y1;
-	}
-}
+// canvas.addEventListener("mouseup",()=> {
+// 	isTrue = false;
 
-canvas.addEventListener("mouseup",()=> {
+// 	x = undefined;
+// 	y = undefined;
+// })
+
+canvas.addEventListener("pointerup",()=> {
 	isTrue = false;
 
 	x = undefined;
 	y = undefined;
 })
-
-canvas.onpointerup = (e)=> {
-	isTrue = false;
-
-	x = undefined;
-	y = undefined;
-}
 
 function drowLine(x1, y1, x2, y2) {
 	ctx.beginPath();
