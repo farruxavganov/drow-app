@@ -17,13 +17,13 @@ canvas.addEventListener("mousedown", (e)=> {
 
 })
 
-canvas.addEventListener("touchstart", (e)=> {
+canvas.onpointerdown = (e)=> {
 	isTrue = true;
 	x = e.offsetX;
 	y = e.offsetY;
 	drowCircle(x,y);
 
-})
+}
 
 canvas.addEventListener("mousemove", (e)=> {
 	if(isTrue){
@@ -36,7 +36,7 @@ canvas.addEventListener("mousemove", (e)=> {
 	}
 })
 
-canvas.addEventListener("touchmove", (e)=> {
+canvas.onpointermove = (e) => {
 	if(isTrue){
 		let x1 = e.offsetX;
 		let y1 = e.offsetY;
@@ -45,7 +45,7 @@ canvas.addEventListener("touchmove", (e)=> {
 		x = x1;
 		y = y1;
 	}
-})
+}
 
 canvas.addEventListener("mouseup",()=> {
 	isTrue = false;
@@ -54,12 +54,12 @@ canvas.addEventListener("mouseup",()=> {
 	y = undefined;
 })
 
-canvas.addEventListener("touchend",()=> {
+canvas.onpointerup = (e)=> {
 	isTrue = false;
 
 	x = undefined;
 	y = undefined;
-})
+}
 
 function drowLine(x1, y1, x2, y2) {
 	ctx.beginPath();
