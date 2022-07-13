@@ -9,17 +9,9 @@ let isTrue = false;
 let x = undefined;
 let y = undefined;
 
-// canvas.addEventListener("mousedown", (e)=> {
-// 	console.log(e)
-// 	isTrue = true;
-// 	x = e.offsetX;
-// 	y = e.offsetY;
-// 	drowCircle(x,y);
 
-// })
 
 canvas.addEventListener("pointerdown", (e)=> {
-	
 	isTrue = true;
 	x = e.offsetX;
 	y = e.offsetY;
@@ -27,21 +19,8 @@ canvas.addEventListener("pointerdown", (e)=> {
 
 })
 
-// canvas.addEventListener("mousemove", (e)=> {
 
-// 	if(isTrue){
-// 		let x1 = e.offsetX;
-// 		let y1 = e.offsetY;
-// 		drowCircle(x1,y1);
-// 		drowLine(x,y,x1,y1);
-// 		x = x1;
-// 		y = y1;
-// 	}
-// })
-
-const p = document.querySelector(".p");
 canvas.addEventListener("pointermove", (e)=> {
-	p.innerHTML = e.offsetX
 	if(isTrue){
 		let x1 = e.offsetX;
 		let y1 = e.offsetY;
@@ -51,13 +30,6 @@ canvas.addEventListener("pointermove", (e)=> {
 		y = y1;
 	}
 })
-
-// canvas.addEventListener("mouseup",()=> {
-// 	isTrue = false;
-
-// 	x = undefined;
-// 	y = undefined;
-// })
 
 canvas.addEventListener("pointerup",()=> {
 	isTrue = false;
